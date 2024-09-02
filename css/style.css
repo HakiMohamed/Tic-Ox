@@ -1,0 +1,275 @@
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #parent {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      #TableDesCases {
+        display: grid;
+        background-color: #f8f4f4;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .caseStyle {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(222, 225, 225);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid #303030;
+        font-size: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .caseStyle:hover {
+        background-color: #ddd;
+      }
+
+      .x {
+        color: blue;
+      }
+
+      .o {
+        color: green;
+      }
+
+      #scoreboard {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .score-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .player {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .player-label {
+        font-size: 14px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      .score-number {
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      #scoreX {
+        color: #007bff;
+      }
+
+      #scoreO {
+        color: #28a745;
+      }
+
+      #modal {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        background-color: #00000030;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1000;
+      }
+      
+      #modalContent {
+        
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border-radius: 8px;
+        width: 300px;   
+        max-width: 90%;
+      }
+      
+
+      #modalContent h2 {
+        margin: 0 0 10px;
+      }
+
+      #modalContent .button {
+        margin: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+
+      #modalContent .button:hover {
+        background-color: #ddd;
+      }
+
+      #continueButton {
+        background-color: #007bff;
+        color: white;
+      }
+
+      #restartButton {
+        background-color: #28a745;
+        color: white;
+      }
+
+      #turnParent {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      #turnmessage {
+        background-color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        transition: color 0.3s;
+      }
+
+      .x-turn {
+        color: blue;
+        background-color: #ffffff;
+      }
+
+      .o-turn {
+        color: rgb(5, 209, 5);
+        border: #303030;
+        border-width: 1px;
+        background-color: #ffffff;
+      }
+
+      .x-hover:hover {
+        background-color: blue;
+        color: white;
+      }
+
+      .o-hover:hover {
+        background-color: rgb(41, 214, 6);
+        color: white;
+      }
+
+      
+      .winning-cell {
+        transition: background-color 1ms;
+        background-color: gold; 
+      }
+
+      #scoreDesplayer {
+        text-align: center;
+      }
+
+      #Dvscore {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100px;
+        max-width: 120px;
+      }
+
+      .player-label {
+        font-size: 12px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      .score-number {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      #XscoreNumber {
+        color: #007bff;
+      }
+
+      #OscoreNumber {
+        color: #28a745;
+      }
+
+      /* Media Queries for responsiveness */
+      @media (max-width: 600px) {
+        #TableDesCases {
+          padding: 5px;
+        }
+
+        .caseStyle {
+          width: 25px;
+          height: 25px;
+          font-size: 18px;
+        }
+
+        #scoreboard {
+          width: 90%;
+        }
+
+        .score-number {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .caseStyle {
+          width: 20px;
+          height: 20px;
+          font-size: 16px;
+        }
+
+        #scoreDesplayer {
+          font-size: 14px;
+        }
+
+        .score-number {
+          font-size: 16px;
+        }
+      }
+    
